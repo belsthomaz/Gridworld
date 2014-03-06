@@ -33,16 +33,9 @@ public class BugRunner
     public static void main(String[] args)
     {
         ActorWorld world = new ActorWorld();
-        TriangleBug Jay = new TriangleBug(6);
-        TriangleBug May = new TriangleBug(3);
-        SpawnBug Judith = new SpawnBug();
-        SpawnBug Carl = new SpawnBug();
+       
         world.add(new Bug());
-        world.add(new Location(7,8), Jay);
-        world.add(new Location(5,4), May);
-        world.add(new Location(7,2), Judith);
-        world.add(new Location(6,8), Carl);
-//        world.add(new Rock());
+        world.add(new Rock());
         world.show();
     }
 }

@@ -3,9 +3,15 @@ import info.gridworld.actor.Actor;
 import info.gridworld.actor.Critter;
 import info.gridworld.actor.Rock;
 import info.gridworld.grid.Location;
+
+import java.awt.Color;
 import java.util.ArrayList;
 public class CreepyCritter extends Actor
 {
+	public CreepyCritter()
+	{
+		setColor(Color.GRAY);
+	}
 	public void act()
 	{
 		if(getGrid() == null)
@@ -13,7 +19,7 @@ public class CreepyCritter extends Actor
 			return;
 		}
 		ArrayList<Actor> actors = getActors(); 
-		processActors(actors); 
+
 		ArrayList<Location> moveLocs = getMoveLocations(); 
 		Location loc = selectMoveLocation(moveLocs); 
 		makeMove(loc); 
@@ -24,14 +30,7 @@ public class CreepyCritter extends Actor
 		return getGrid().getNeighbors(getLocation());
 	}
 	
-	public void processActors(ArrayList<Actor> actors)
-	{
-		for (Actor a : actors) 
-		{ 
-			if (!(a instanceof Rock) && !(a instanceof Critter)) 
-			a.removeSelfFromGrid(); 
-		} 
-	}
+	
 	
 	public ArrayList<Location> getMoveLocations()
 	{
