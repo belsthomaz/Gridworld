@@ -29,7 +29,7 @@ public class Rainbow extends Actor
 	{
 		ArrayList<Actor> actors = getActors();
 		processActors(actors);
-		addNewRainbow(myRainbows);
+		
 	}
 	
 	public ArrayList<Actor> getActors()
