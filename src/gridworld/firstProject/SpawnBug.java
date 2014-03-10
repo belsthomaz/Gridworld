@@ -14,7 +14,12 @@ public class SpawnBug extends Bug
 	
 	 public SpawnBug()
 	 {
-		 setColor(Color.BLUE);
+		 int red = (int) (Math.random() * 255);
+		 int blue = (int) (Math.random() *255);
+		 int green = (int) (Math.random() *255);
+		 int direction = ((int) (Math.random() * red * blue * green) % 8) * 45;
+		 this.setDirection(direction);
+		 this.setColor(new Color(red,green,blue));
 		 
 	 }
 
@@ -26,10 +31,15 @@ public class SpawnBug extends Bug
 			 return; 
 		 }
 		 Location loc = getLocation(); 
-		 Location next = loc.getAdjacentLocation(getDirection()); 
-		 if (gr.isValid(next)) 
+		 Location nextLoc = loc.getAdjacentLocation(getDirection()); 
+		 Location backRightLoc = loc.getAdjacentLocation(90);
+		 Location backLeftLoc = loc.getAdjacentLocation(270);
+		 Location furtherLeftLoc = loc.getAdjacentLocation(225);
+		 Location furtherRightLoc = loc.getAdjacentLocation(135);
+		 
+		 if (gr.isValid(nextLoc)) 
 		 {
-			 moveTo(next);
+			 moveTo(nextLoc);
 		 }
 		 else 
 		 {
@@ -38,6 +48,7 @@ public class SpawnBug extends Bug
 
 		 SpawnBug spawnBug = new SpawnBug();
 		 spawnBug.putSelfInGrid(gr, loc);
+		
 	 }
 	 
 	

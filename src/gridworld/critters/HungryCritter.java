@@ -13,7 +13,11 @@ public class HungryCritter extends Critter
 {
 	public HungryCritter()
 	{
-		setColor(Color.green);
+		int red = (int) (Math.random() * 255);
+		int blue = (int) (Math.random() *255);
+		int green = (int) (Math.random() *255);
+		 
+		this.setColor(new Color(red,green,blue));
 		
 	}
 	

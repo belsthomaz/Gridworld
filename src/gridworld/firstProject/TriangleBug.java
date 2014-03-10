@@ -31,10 +31,10 @@ public class TriangleBug extends Bug
 		 {
 			 removeSelfFromGrid();
 		 }
-//		 Rock rock = new Rock(getColor());
-//		 rock.putSelfInGrid(gr, loc);
-		 Flower flower = new Flower(getColor());
-		 flower.putSelfInGrid(gr, loc);
+		 Rock rock = new Rock(getColor());
+		 rock.putSelfInGrid(gr, loc);
+//		 Flower flower = new Flower(getColor());
+//		 flower.putSelfInGrid(gr, loc);
 	 }
 	 
 	 public TriangleBug(int length)
