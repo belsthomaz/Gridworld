@@ -2,6 +2,9 @@ package gridworld.unicorns;
 
 
 import info.gridworld.actor.Actor;
+import info.gridworld.actor.Flower;
+import info.gridworld.grid.Grid;
+import info.gridworld.grid.Location;
 
 import java.awt.Color;
 import java.util.ArrayList;
@@ -10,9 +13,9 @@ import java.util.ArrayList;
  * @author itho1735
  * need to make arrayList that keeps track of rainbows and adds one everytime a butterfly is eaten.
  */
-public class Rainbow extends Actor
+public class Rainbow extends Flower
 {
-	private ArrayList<Rainbow> myRainbows;
+//	private static final double DARKENING_FACTOR = 0.05;
 	
 	public Rainbow()
 	{
@@ -21,39 +24,21 @@ public class Rainbow extends Actor
 		int green = (int) (Math.random() *255);
 		
 		this.setColor(new Color(red,green,blue));
-		
-		myRainbows = new ArrayList<Rainbow>();
 	}
 	
-	public void act()
-	{
-		ArrayList<Actor> actors = getActors();
-		processActors(actors);
-		
-	}
+//	public void act()
+//	{
+//	Color c = getColor();
+//	int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
+//	int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
+//	int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
+//	
+//	setColor(new Color(red, green, blue));
+//	
+//	}
 	
-	public ArrayList<Actor> getActors()
-	{
-		return getGrid().getNeighbors(getLocation());
-	}
 	
-	public void processActors(ArrayList<Actor> actors)
-	{
-		for (Actor a : actors) 
-		{ 
-			if (!(a instanceof Unicorn) && !(a instanceof Rainbow) && !(a instanceof Butterflies)) 
-			a.removeSelfFromGrid(); 
-		} 
-	}
 
-	public ArrayList<Rainbow> getMyRainbows()
-	{
-		return myRainbows;
-	}
 
-	public void setMyRainbows(ArrayList<Rainbow> myRainbows)
-	{
-		this.myRainbows = myRainbows;
-	}
 	
 }
