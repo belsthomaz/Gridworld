@@ -1,13 +1,7 @@
 package gridworld.unicorns;
-
-
-import info.gridworld.actor.Actor;
 import info.gridworld.actor.Flower;
-import info.gridworld.grid.Grid;
-import info.gridworld.grid.Location;
-
 import java.awt.Color;
-import java.util.ArrayList;
+
 /**
  * 
  * @author itho1735
@@ -15,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Rainbow extends Flower
 {
-//	private static final double DARKENING_FACTOR = 0.05;
+	private static final double DARKENING_FACTOR = 0.05;
 	
 	public Rainbow()
 	{
@@ -26,16 +20,14 @@ public class Rainbow extends Flower
 		this.setColor(new Color(red,green,blue));
 	}
 	
-//	public void act()
-//	{
-//	Color c = getColor();
-//	int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
-//	int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
-//	int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
-//	
-//	setColor(new Color(red, green, blue));
-//	
-//	}
+	public void act()
+	{
+		Color c = getColor();
+		int red = (int) (c.getRed() * (1 - DARKENING_FACTOR));
+		int blue = (int) (c.getBlue() * (1 - DARKENING_FACTOR));
+		int green = (int) (c.getGreen() * (1 - DARKENING_FACTOR));
+		setColor(new Color(red, green, blue));
+	}
 	
 	
 
